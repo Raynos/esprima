@@ -10126,27 +10126,6 @@ var harmonyTestFixture = {
             message: 'Error: Line 1: Illegal yield expression'
         },
 
-        '(function* () { })': {
-            index: 17,
-            lineNumber: 1,
-            column: 18,
-            message: 'Error: Line 1: Missing yield in generator'
-        },
-
-        'function* test () { }': {
-            index: 21,
-            lineNumber: 1,
-            column: 22,
-            message: 'Error: Line 1: Missing yield in generator'
-        },
-
-        'var obj = { *test() { } }': {
-            index: 23,
-            lineNumber: 1,
-            column: 24,
-            message: 'Error: Line 1: Missing yield in generator'
-        },
-
         'var obj = { *test** }': {
             index: 17,
             lineNumber: 1,

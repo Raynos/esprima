@@ -237,7 +237,6 @@ parseYieldExpression: true
         StrictLHSPrefix:  'Prefix increment/decrement may not have eval or arguments operand in strict mode',
         StrictReservedWord:  'Use of future reserved word in strict mode',
         NoFromAfterImport: 'Missing from after import',
-        NoYieldInGenerator: 'Missing yield in generator',
         NoUnintializedConst: 'Const must be initialized',
         ComprehensionRequiresBlock: 'Comprehension must have at least one block',
         ComprehensionError:  'Comprehension Error',
@@ -2286,9 +2285,6 @@ parseYieldExpression: true
         if (options.name && strict && isRestrictedWord(params[0].name)) {
             throwErrorTolerant(options.name, Messages.StrictParamName);
         }
-        if (state.yieldAllowed && !state.yieldFound) {
-            throwError({}, Messages.NoYieldInGenerator);
-        }
         strict = previousStrict;
         state.yieldAllowed = previousYieldAllowed;
 
@@ -4191,9 +4187,6 @@ parseYieldExpression: true
         if (strict && tmp.stricted) {
             throwErrorTolerant(tmp.stricted, message);
         }
-        if (state.yieldAllowed && !state.yieldFound) {
-            throwError({}, Messages.NoYieldInGenerator);
-        }
         strict = previousStrict;
         state.yieldAllowed = previousYieldAllowed;
 
@@ -4249,9 +4242,6 @@ parseYieldExpression: true
         }
         if (strict && tmp.stricted) {
             throwErrorTolerant(tmp.stricted, message);
-        }
-        if (state.yieldAllowed && !state.yieldFound) {
-            throwError({}, Messages.NoYieldInGenerator);
         }
         strict = previousStrict;
         state.yieldAllowed = previousYieldAllowed;
